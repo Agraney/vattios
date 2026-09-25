@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* VittaOS Clean Fintech Base Tokens */
+    --background: 0 0% 98%; /* #FAFAFA Off-white */
+    --foreground: 217 33% 17%; /* Slate 800 #1E293B */
+
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 217 33% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+
+    /* Deep Navy Brand Primary #13294B */
+    --primary: 216 59% 18%; 
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%; /* Slate 100 */
+    --secondary-foreground: 216 59% 18%;
+
+    --muted: 210 40% 96.1%; /* Slate 100 */
+    --muted-foreground: 215 16% 47%; /* Slate 500 */
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 216 59% 18%;
+
+    /* Destructive Red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%; /* Slate 200 #E2E8F0 */
+    --input: 214 32% 91%;
+    --ring: 216 59% 18%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[#FAFAFA] text-neutral-900 font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Finance Typography & Alignment Rules */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    letter-spacing: -0.01em;
+  }
+
+  /* Table Cell standard vertical alignment and crisp dividers */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+}
+
+@layer utilities {
+  /* Generous Fintech Card Padding */
+  .fintech-card {
+    @apply bg-white border border-neutral-200 rounded-lg p-6 sm:p-7 shadow-card;
+  }
+
+  .fintech-card-dense {
+    @apply bg-white border border-neutral-200 rounded-lg p-5 shadow-card;
+  }
+
+  /* Numeric Data typography helper */
+  .num-metric {
+    @apply font-semibold tracking-tight text-brand tabular-nums;
+  }
+}
